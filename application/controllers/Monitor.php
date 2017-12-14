@@ -37,7 +37,7 @@ class Monitor extends CI_Controller {
   {
     $data = array('id' => $this->input->post('id'));
     $result = $this->monitor_model->FindMonitor($data);
-    echo json_encode($result[0]);
+    echo json_encode($result);
   }
 
   public function update()
@@ -53,7 +53,7 @@ class Monitor extends CI_Controller {
       'phone'               => $this->input->post('phone')
     );
 
-    if($this->monitor_model->UpdateMonitor($data)){
+    if($this->monitor_model->UpdateMonitoria($data)){
       echo "true";
     }else{
       echo "false";
