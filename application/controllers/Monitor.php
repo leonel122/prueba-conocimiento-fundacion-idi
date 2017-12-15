@@ -6,6 +6,21 @@ class Monitor extends CI_Controller {
   function __construct(){
     parent::__construct();
     $this->load->model('monitor_model');
+    $this->load->library('navbar');
+    $this->load->library('script');
+  }
+
+  public function index()
+  {
+    $data = $this->common("home");
+    $this->load->view('monitor/index',$data);
+  }
+
+  public function form()
+  {
+    $data = $this->common("Crear Monitor");
+    $this->load->view('monitor/createmonitor',$data);
+
   }
 
   public function create()
@@ -69,5 +84,16 @@ class Monitor extends CI_Controller {
     }else{
       echo "false";
     }
+  }
+
+  public function common($title)
+  {
+    $data = [
+    "title" => $title,
+    "navbar" => $this->navbar->navbar(),
+    "script" => $this->script->script()
+    ];
+    $this->load->view('monitor/header',$data);
+    return $data;
   }
 }
