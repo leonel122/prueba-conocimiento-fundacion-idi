@@ -18,24 +18,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/php/fundacionidi/Index.php/Monitor">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/php/fundacionidi/Index.php/Monitor/form">Crear Monitor</a>
+              <a class="nav-link" href="http://127.0.0.1/php/fundacionidi/Index.php/Monitor/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
+                Monitores
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="http://127.0.0.1/php/fundacionidi/Index.php/Monitor/form">Crear Monitor </a>
+                <a class="dropdown-item" href="http://127.0.0.1/php/fundacionidi/Index.php/Monitor/findall">Ver Monitores</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Monitores
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="http://127.0.0.1/php/fundacionidi/Index.php/Monitoria/form">Crear Monitor </a>
+                <a class="dropdown-item" href="http://127.0.0.1/php/fundacionidi/Index.php/Monitoria/findall">Ver Monitores</a>
+                <div class="dropdown-divider"></div>
+              </div>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">

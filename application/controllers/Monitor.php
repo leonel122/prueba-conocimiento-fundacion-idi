@@ -20,11 +20,11 @@ class Monitor extends CI_Controller {
   {
     $data = $this->common("Crear Monitor");
     $this->load->view('monitor/createmonitor',$data);
-
   }
 
   public function create()
   {
+
     $data = array(
       'firsts_names'        => $this->input->post('firsts_names'),
       'last_name'           => $this->input->post('last_name'),
@@ -36,23 +36,36 @@ class Monitor extends CI_Controller {
     );
 
     if($this->monitor_model->SaveMonitor($data)){
-        echo "true";
-      }else{
-        echo "false";
-      }
+      echo "true";
+    }else{
+      echo "false";
+    }
   }
 
   public function findall()
 	{
     $result = $this->monitor_model->FindallMonitor();
-    echo json_encode($result);
+    $data = $this->common("Todos los Monitores");
+    $data += [ "result" => json_encode($result)];
+    $this->load->view('monitor/findall',$data);
 	}
 
-  public function find()
+  public function find($id)
   {
-    $data = array('id' => $this->input->post('id'));
+    $data = array('id' => $id);
     $result = $this->monitor_model->FindMonitor($data);
-    echo json_encode($result);
+    $data = $this->common("Monitor");
+    $data += [ "result" => json_encode($result[0])];
+    $this->load->view('monitor/find',$data);
+  }
+
+  public function edit($id)
+  {
+    $data = array('id' => $id);
+    $result = $this->monitor_model->FindMonitor($data);
+    $data = $this->common("Editar");
+    $data += [ "result" => json_encode($result[0])];
+    $this->load->view('monitor/edit',$data);
   }
 
   public function update()
@@ -68,19 +81,17 @@ class Monitor extends CI_Controller {
       'phone'               => $this->input->post('phone')
     );
 
-    if($this->monitor_model->UpdateMonitoria($data)){
-      echo "true";
+    if($this->monitor_model->UpdateMonitor($data)){
+      $this->find($data["id"]);
     }else{
       echo "false";
     }
   }
 
-  public function delete()
+  public function delete($id)
   {
-    $id = $this->input->post('id');
-    $this->monitor_model->DeleteMonitor($id);
     if($this->monitor_model->DeleteMonitor($id)){
-      echo "true";
+      $this->findall();
     }else{
       echo "false";
     }
