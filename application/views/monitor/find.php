@@ -26,7 +26,7 @@
             <td><?= $result->identification_card?></td>
             <td><?= $result->email?></td>
             <td><?= $result->phone?></td>
-            <td> <a class="btn btn-danger" href="../delete/<?= $result->id;?>" >Eliminar</a></td>
+            <td> <a class="btn btn-danger" href="http://127.0.0.1/php/fundacionidi/Index.php/Monitor/delete/<?= $result->id;?>" >Eliminar</a></td>
           </tr>
         </tbody>
       </table>

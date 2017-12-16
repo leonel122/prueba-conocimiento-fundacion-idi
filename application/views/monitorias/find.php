@@ -20,7 +20,7 @@
             <td><?= $result->matter?></td>
             <td><?= $result->date?></td>
             <td><?= $result->lounge?></td>
-            <td> <a class="btn btn-danger" href="../delete/<?= $result->id;?>" >Eliminar</a></td>
+            <td> <a class="btn btn-danger" href="http://127.0.0.1/php/fundacionidi/Index.php/Monitoria/delete/<?= $result->id;?>" >Eliminar</a></td>
           </tr>
         </tbody>
       </table>

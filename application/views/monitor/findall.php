@@ -28,7 +28,7 @@
               <td><?= $value->identification_card;?></td>
               <td><?= $value->email;?></td>
               <td><?= $value->phone;?></td>
-              <td><a class="btn btn-info" href="find/<?= $value->id;?>" >Ver</a> <a class="btn btn-warning" href="edit/<?= $value->id;?>" >Editar</a></td>
+              <td><a class="btn btn-info" href="http://127.0.0.1/php/fundacionidi/Index.php/Monitor/find/<?= $value->id;?>" >Ver</a> <a class="btn btn-warning" href="http://127.0.0.1/php/fundacionidi/Index.php/Monitor/edit/<?= $value->id;?>" >Editar</a></td>
           </tr>
         <?php endforeach;?>
         </tbody>
